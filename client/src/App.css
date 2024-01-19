@@ -1,0 +1,142 @@
+/* retro.css */
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #e5e5e5;
+    color: #2d2d2d;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .container {
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  header {
+    background-color: #ffcc00;
+    color: #2d2d2d;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav li {
+    margin: 0 15px;
+  }
+  
+  main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  section {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  /* retro.css */
+
+/* ... (otros estilos) */
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin: 0;
+    padding: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+li:hover {
+  transform: scale(1.05);
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input,
+  textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+
+  
+  /* ... (otros estilos) */
+  
+  
+  footer {
+    background-color: #2d2d2d;
+    color: #ffcc00;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  button {
+    background-color: #ffcc00;
+    color: #2d2d2d;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #e5e500;
+  }
+  
+  button[type="submit"] {
+    background-color: #ffcc00;
+    color: #2d2d2d;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Agregamos transiciones para suavizar los efectos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #ffff9b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(2px); /* Agregamos una pequeña traslación hacia abajo al pasar el cursor */
+  }
