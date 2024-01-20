@@ -1,143 +1,173 @@
-/* retro.css */
-
+/* Resetting default styles and defining the overall styling for the body */
 body {
-    font-family: 'Courier New', monospace;
-    background-color: #e5e5e5;
-    color: #2d2d2d;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-  }
-  
-  .container {
-    max-width: 1200px;
-    padding: 20px;
-    background-color: #f8f8f8;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-  }
-  
-  header {
-    background-color: #ffcc00;
-    color: #2d2d2d;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-  }
-  
-  nav li {
-    margin: 0 15px;
-  }
-  
-  main {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
-  
-  section {
-    flex: 1;
-    margin: 0 10px;
-  }
-
-  /* retro.css */
-
-/* ... (otros estilos) */
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  li {
-    margin: 0;
-    padding: 10px;
-    background-color: #f8f8f8;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.222);
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
+  font-family: 'Courier New', monospace;
+  background-color: #e5e5e5;
+  color: #2d2d2d;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
+/* Styling for the main container */
+.container {
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Styling for the header section */
+header {
+  background-color: #ffcc00;
+  color: #2d2d2d;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Styling for the navigation bar */
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Styling for navigation list */
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+/* Styling for navigation list items */
+nav li {
+  margin: 0 15px;
+}
+
+/* Styling for the main content section */
+main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* Styling for individual sections within the main content */
+section {
+  flex: 1;
+  margin: 0 10px;
+}
+
+/* Styling for unordered lists */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling for list items */
+li {
+  margin: 0;
+  padding: 10px;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.222);
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Styling for list items on hover */
 li:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.315);
 }
 
+/* Styling for forms */
 form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f8f8f8;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  input,
-  textarea {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 15px;
-  }
-  
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
 
-  
-  /* ... (otros estilos) */
-  
-  
-  footer {
-    background-color: #2d2d2d;
-    color: #ffcc00;
-    padding: 20px 0;
-    text-align: center;
+/* Styling for form labels */
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Styling for form inputs and textareas */
+input,
+textarea {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+/* Styling for buttons */
+button {
+  background-color: #ffcc00;
+  color: #2d2d2d;
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Styling for button hover effect */
+button:hover {
+  background-color: #e5e500;
+}
+
+/* Styling for form submit button */
+button[type="submit"] {
+  background-color: #ffcc00;
+  color: #2d2d2d;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for form submit button hover effect */
+button[type="submit"]:hover {
+  background-color: #ffff9b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(2px);
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
   }
-  
-  button {
-    background-color: #ffcc00;
-    color: #2d2d2d;
-    margin-right: 10px;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  button:hover {
-    background-color: #e5e500;
+
+  nav li {
+    margin: 10px 0;
   }
-  
-  button[type="submit"] {
-    background-color: #ffcc00;
-    color: #2d2d2d;
-    padding: 15px 30px;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Agregamos transiciones para suavizar los efectos */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  main {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  button[type="submit"]:hover {
-    background-color: #ffff9b;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: translateY(2px); /* Agregamos una pequeña traslación hacia abajo al pasar el cursor */
+
+  section {
+    width: 100%;
+    margin: 10px 0;
   }
+
+  form {
+    max-width: 100%;
+  }
+}
