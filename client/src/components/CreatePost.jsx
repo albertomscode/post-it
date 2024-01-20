@@ -12,7 +12,7 @@ const CreatePost = () => {
 
     try {
       console.log('Data to be sent:', { title, content, category });
-      const response = await fetch('http://localhost:8080/posts', {
+      const response = await fetch('https://post-it-server.onrender.com/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -23,7 +23,7 @@ app.get("/posts", async (request, response) => {
   let query = "SELECT * FROM posts";
   
   if (categoryName) {
-    query += " WHERE category = $1";
+    query += " WHERE categories = $1";
   }
 
   try {
@@ -90,12 +90,13 @@ app.get("/posts/category/:categoryName", async (request, response) => {
   const categoryName = request.params.categoryName;
 
   try {
-    const result = await db.query("SELECT * FROM posts WHERE category = $1", [categoryName]);
+    const result = await db.query("SELECT * FROM categories WHERE name = $1", [categoryName]);
     response.json(result.rows);
   } catch (error) {
     console.error('Error fetching posts by category', error);
     response.status(500).json({ error: 'Failed to fetch posts by category' });
   }
 });
+
 
 app.listen(PORT, () => console.log(`App is running on PORT ${PORT}`));

@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     // Cargar los últimos posts al montar el componente
     async function fetchLatestPosts() {
-        const response = await fetch('http://localhost:8080/posts');
+        const response = await fetch('https://post-it-server.onrender.com/posts');
               const posts = await response.json();
           setLatestPosts(posts);
     }

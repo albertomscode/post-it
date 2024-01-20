@@ -8,7 +8,7 @@ function PostDetails() {
 
   useEffect(() => {
     async function getPostDetails() {
-        const response = await fetch(`http://localhost:8080/posts/${postId}`);
+        const response = await fetch(`https://post-it-server.onrender.com/posts/${postId}`);
         const postDetails = await response.json();
         setPost(postDetails);
     }
@@ -16,13 +16,13 @@ function PostDetails() {
     getPostDetails();
   }, [postId]);
 
-  const handleLike = async () => { await fetch(`http://localhost:8080/posts/${postId}/like`, {
+  const handleLike = async () => { await fetch(`https://post-it-server.onrender.com/posts/${postId}/like`, {
         method: 'POST',
       });
       getPostDetails();
   };
 
-  const handleDelete = async () => { await fetch(`http://localhost:8080/posts/${postId}`, {
+  const handleDelete = async () => { await fetch(`https://post-it-server.onrender.com/posts/${postId}`, {
         method: 'DELETE',
       });
       navigate('/posts');

@@ -9,7 +9,7 @@ function PostList() {
     async function fetchData() {
       try {
         // Obtener posts
-        const postsResponse = await fetch("http://localhost:8080/posts");
+        const postsResponse = await fetch("https://post-it-server.onrender.com/posts");
         if (postsResponse.ok) {
           const postsData = await postsResponse.json();
           setPosts(postsData);
@@ -18,7 +18,7 @@ function PostList() {
         }
 
         // Obtener categorías disponibles
-        const categoriesResponse = await fetch("http://localhost:8080/categories");
+        const categoriesResponse = await fetch("https://post-it-server.onrender.com/posts/category/:categoryName");
         if (categoriesResponse.ok) {
           const categoriesData = await categoriesResponse.json();
           setCategories(categoriesData);
