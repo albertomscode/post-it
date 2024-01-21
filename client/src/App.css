@@ -1,6 +1,7 @@
 /* Resetting default styles and defining the overall styling for the body */
 body {
   font-family: 'Courier New', monospace;
+  font-size: 20px;
   background-color: #e5e5e5;
   color: #2d2d2d;
   margin: 0;

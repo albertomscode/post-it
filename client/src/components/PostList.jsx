@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 function PostList() {
   const [posts, setPosts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        // Obtener posts
-        const postsResponse = await fetch("https://post-it-server.onrender.com/posts");
+        const postsResponse = await fetch(`https://post-it-server.onrender.com/posts${selectedCategory ? `?categoryName=${selectedCategory}` : ''}`);
         if (postsResponse.ok) {
           const postsData = await postsResponse.json();
           setPosts(postsData);
@@ -17,8 +17,7 @@ function PostList() {
           throw new Error('Failed to fetch posts');
         }
 
-        // Obtener categorías disponibles
-        const categoriesResponse = await fetch("https://post-it-server.onrender.com/posts/category/:categoryName");
+        const categoriesResponse = await fetch("https://post-it-server.onrender.com/categories");
         if (categoriesResponse.ok) {
           const categoriesData = await categoriesResponse.json();
           setCategories(categoriesData);
@@ -31,20 +30,11 @@ function PostList() {
     }
 
     fetchData();
-  }, []);
+  }, [selectedCategory]);
 
   return (
     <div>
       <h1>Post List</h1>
-      <div>
-        <ul>
-          {categories.map(category => (
-            <li key={category.name}>
-              <Link to={`/posts/category/${category.name}`}>{category.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
       <ul>
         {posts.map(post => (
           <li key={post.id}>

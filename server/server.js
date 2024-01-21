@@ -23,7 +23,7 @@ app.get("/posts", async (request, response) => {
   let query = "SELECT * FROM posts";
   
   if (categoryName) {
-    query += " WHERE categories = $1";
+    query += " WHERE category = $1";
   }
 
   try {
@@ -32,6 +32,30 @@ app.get("/posts", async (request, response) => {
   } catch (error) {
     console.error('Error fetching posts', error);
     response.status(500).json({ error: 'Something went wrong!' });
+  }
+});
+
+app.get("/categories", async (request, response) => {
+  try {
+    const result = await db.query("SELECT * FROM categories");
+    response.json(result.rows);
+  } catch (error) {
+    console.error('Error fetching categories', error);
+    response.status(500).json({ error: 'Failed to fetch categories' });
+  }
+});
+
+// ...
+
+app.get("/categories/:categoryName/posts", async (request, response) => {
+  const categoryName = request.params.categoryName;
+
+  try {
+    const result = await db.query("SELECT * FROM posts WHERE category = $1", [categoryName]);
+    response.json(result.rows);
+  } catch (error) {
+    console.error('Error fetching posts by category', error);
+    response.status(500).json({ error: 'Failed to fetch posts by category' });
   }
 });
 
@@ -85,18 +109,5 @@ app.post("/posts/:postId/like", async (request, response) => {
     response.status(500).json({ error: 'Failed to update likes' });
   }
 });
-
-app.get("/posts/category/:categoryName", async (request, response) => {
-  const categoryName = request.params.categoryName;
-
-  try {
-    const result = await db.query("SELECT * FROM categories WHERE name = $1", [categoryName]);
-    response.json(result.rows);
-  } catch (error) {
-    console.error('Error fetching posts by category', error);
-    response.status(500).json({ error: 'Failed to fetch posts by category' });
-  }
-});
-
 
 app.listen(PORT, () => console.log(`App is running on PORT ${PORT}`));

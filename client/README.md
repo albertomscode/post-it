@@ -31,26 +31,13 @@ Post-it-All is a database-driven application that combines the power of React fo
 1. Develop a React client for a seamless user interface.
 2. Use `react-router-dom` to create multiple pages, including a home page, a page to display all posts, and a page for creating new posts.
 
-## Installation
-
-1. Clone the repository.
-2. Navigate to the "server" folder and run `npm install` to install server dependencies.
-3. Navigate to the "client" folder and run `npm install` to install client dependencies.
-
-## Usage
-
-1. Start the Express server by navigating to the "server" folder and running `npm start`.
-2. Start the React client by navigating to the "client" folder and running `npm start`.
-3. Access the application at `http://localhost:3000` in your browser.
-
 ## Hosting on Render.com
 
-This project is hosted on [Render.com](https://render.com/). You can easily deploy your Post-it-All application on Render.com by following these steps:
+This project is hosted on [Render.com]
 
-1. [Create an account on Render.com](https://render.com/signup).
-2. [Create a new web service](https://render.com/docs/deploy-react) and link it to your project repository.
-3. Configure the deployment settings as needed.
-4. Deploy your application, and it will be live at your Render.com domain.
+Client side: https://post-it-vliy.onrender.com
+
+Server: https://post-it-server.onrender.com/posts
 
 ## Stretch Goals
 
