@@ -18,18 +18,18 @@ Post-it-All is a database-driven application that combines the power of React fo
 
 ### Database (Supabase)
 
-1. Design a comprehensive database schema with relationships between tables.
-2. Use Supabase SQL Editor or a seed.js file to seed the database with data.
+1. Designed a comprehensive database schema with relationships between tables.
+2. Used Supabase SQL Editor.
 
 ### Server (Express)
 
-1. Create an Express server to handle requests.
-2. Implement endpoints for POST and GET requests to interact with the database.
+1. Created an Express server to handle requests.
+2. Implemented endpoints for POST and GET requests to interact with the database.
 
 ### Client (React)
 
-1. Develop a React client for a seamless user interface.
-2. Use `react-router-dom` to create multiple pages, including a home page, a page to display all posts, and a page for creating new posts.
+1. Developed a React client for a user interface.
+2. Used `react-router-dom` to create multiple pages, including a home page, a page to display all posts, and a page for creating new posts.
 
 ## Hosting on Render.com
 
@@ -37,13 +37,13 @@ This project is hosted on [Render.com]
 
 Client side: https://post-it-vliy.onrender.com
 
-Server: https://post-it-server.onrender.com/posts
+Server: https://post-it-server.onrender.com/posts | https://post-it-server.onrender.com/categories
 
 ## Stretch Goals
 
-- **Post Likes**: Allow users to like posts and see the like count increase.
-- **Delete Posts**: Implement functionality to allow users to delete their posts.
-- **Category Filtering**: Enable users to filter posts by category using query strings or dedicated routes.
+- **Post Likes**: Allowed users to like posts and see the like count increase.
+- **Delete Posts**: Implemented functionality to allow users to delete their posts.
+- **Category Filtering**: Enabled users to filter posts by category using dedicated routes.
 
 Feel free to explore, contribute, and share your experiences with Post-it-All!
 
