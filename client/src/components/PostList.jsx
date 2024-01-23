@@ -8,25 +8,18 @@ function PostList() {
 
   useEffect(() => {
     async function fetchData() {
-      try {
+
         const postsResponse = await fetch(`https://post-it-server.onrender.com/posts${selectedCategory ? `?categoryName=${selectedCategory}` : ''}`);
         if (postsResponse.ok) {
           const postsData = await postsResponse.json();
           setPosts(postsData);
-        } else {
-          throw new Error('Failed to fetch posts');
         }
 
         const categoriesResponse = await fetch("https://post-it-server.onrender.com/categories");
         if (categoriesResponse.ok) {
           const categoriesData = await categoriesResponse.json();
           setCategories(categoriesData);
-        } else {
-          throw new Error('Failed to fetch categories');
         }
-      } catch (error) {
-        console.error('Error fetching data', error);
-      }
     }
 
     fetchData();
@@ -35,6 +28,17 @@ function PostList() {
   return (
     <div>
       <h1>Post List</h1>
+      <div>
+        <label htmlFor="categorySelect">Select Category: </label>
+        <select id="categorySelect" onChange={(e) => setSelectedCategory(e.target.value)}>
+          <option value="">All Categories</option>
+          {categories.map(category => (
+            <option key={category.name} value={category.name}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+      </div>
       <ul>
         {posts.map(post => (
           <li key={post.id}>

@@ -10,7 +10,6 @@ const CreatePost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
       console.log('Data to be sent:', { title, content, category });
       const response = await fetch('https://post-it-server.onrender.com/posts', {
         method: 'POST',
@@ -27,9 +26,6 @@ const CreatePost = () => {
       } else {
         console.error('Failed to create post');
       }
-    } catch (error) {
-      console.error('Error creating post', error);
-    }
   };
 
   return (
