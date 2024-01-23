@@ -10,22 +10,35 @@ const CreatePost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-      console.log('Data to be sent:', { title, content, category });
-      const response = await fetch('https://post-it-server.onrender.com/posts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ title, content, category }),
-      });
+    // Create a new category
+    const categoryResponse = await fetch('https://post-it-server.onrender.com/categories', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name: category }),
+    });
 
+    if (!categoryResponse.ok) {
+      console.error('Failed to create category');
+      return;
+    }
 
-      if (response.ok) {
-        console.log('Post created successfully!');
-        navigate('/posts');
-      } else {
-        console.error('Failed to create post');
-      }
+    // Continue with creating the post after creating the category
+    const postResponse = await fetch('https://post-it-server.onrender.com/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ title, content, category }),
+    });
+
+    if (postResponse.ok) {
+      console.log('Post created successfully!');
+      navigate('/posts');
+    } else {
+      console.error('Failed to create post');
+    }
   };
 
   return (

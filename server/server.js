@@ -47,6 +47,13 @@ app.get("/categories/:categoryName/posts", async (request, response) => {
   response.json(result.rows);
 });
 
+// Route to create a new category
+app.post("/categories", async (request, response) => {
+  const { name } = request.body;
+  const result = await db.query("INSERT INTO categories (name) VALUES ($1) RETURNING *", [name]);
+  response.json(result.rows[0]);
+});
+
 // Route to create a new post
 app.post("/posts", async (request, response) => {
   const { title, content, category } = request.body;
