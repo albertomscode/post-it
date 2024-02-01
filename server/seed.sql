@@ -1,13 +1,14 @@
+CREATE TABLE categories (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255)
+);
+
 CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
   content TEXT,
-  category VARCHAR(255)
-);
-
-CREATE TABLE categories (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(255)
+  /*category VARCHAR(255)*/
+  categories_id VARCHAR REFERENCES categories(id)
 );
 
 
